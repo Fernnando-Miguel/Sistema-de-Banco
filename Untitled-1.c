@@ -8,4 +8,12 @@ typedef struct {
     int numero_conta;
     float saldo;
 
+}Conta;
+
+int main () {
+    Conta usuario;
+    printf("Digite seu nome: ");
+    fgets(usuario.nome, 90, stdin);
+
+    return 0;
 }
