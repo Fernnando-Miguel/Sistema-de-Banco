@@ -10,6 +10,14 @@ typedef struct {
 
 }Conta;
 
+void criar_conta;
+void login;
+void depositar;
+void sacar;
+void transferir;
+void ver_saldo
+
+
 int main () {
     Conta usuario;
     printf("Digite seu nome: ");
