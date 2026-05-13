@@ -10,18 +10,22 @@ typedef struct {
 
 }Conta;
 
-void criar_conta;
-void login;
-void depositar;
-void sacar;
-void transferir;
-void ver_saldo
-
-
 int main () {
     Conta usuario;
+
     printf("Digite seu nome: ");
     fgets(usuario.nome, 90, stdin);
+
+    printf("Digite seu cpf: ");
+    scanf("%d", &usuario.cpf);
+
+    printf("Digite seu numero da conta: ");
+    scanf("%d", &usuario.numero_conta);
+
+    while(getchar() != '\n' );
+
+    printf("Digite sua senha: ");
+    fgets(usuario.senha, 50, stdin);
 
     return 0;
 }
