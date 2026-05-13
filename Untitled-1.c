@@ -10,9 +10,18 @@ typedef struct {
 
 }Conta;
 
+    void mostrar_conta(Conta usuario){
+        printf("===DADOS DO USUARIO===\n");
+        printf("Nome: %s", usuario.nome);
+        printf("Cpf: %d\n", usuario.cpf);
+        printf("Numero da conta: %d\n", usuario.numero_conta);
+        printf("Saldo: %f\n", usuario.saldo);
+    }
+
 int main () {
     Conta usuario;
 
+    printf("===CADASTRO===\n");
     printf("Digite seu nome: ");
     fgets(usuario.nome, 90, stdin);
 
@@ -26,6 +35,8 @@ int main () {
 
     printf("Digite sua senha: ");
     fgets(usuario.senha, 50, stdin);
+
+      mostrar_conta(usuario);
 
     return 0;
 }

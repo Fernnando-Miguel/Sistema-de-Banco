@@ -5,7 +5,3 @@ void sacar;
 void transferir;
 void ver_saldo;
 
-void mostrar_conta(Conta usuario){
-        printf("===DADOS DO USUARIO===");
-        printf("Nome: %s", usuario.nome);
-    }
