@@ -4,7 +4,7 @@ typedef struct {
 
     char nome[90];
     char senha[50];
-    int cpf;
+    char cpf[11];
     int numero_conta;
     float saldo;
 
@@ -13,7 +13,7 @@ typedef struct {
     void mostrar_conta(Conta usuario){
         printf("===DADOS DO USUARIO===\n");
         printf("Nome: %s", usuario.nome);
-        printf("Cpf: %d\n", usuario.cpf);
+        printf("Cpf: %s\n", usuario.cpf);
         printf("Numero da conta: %d\n", usuario.numero_conta);
         printf("Saldo: %f\n", usuario.saldo);
     }
@@ -25,7 +25,9 @@ typedef struct {
     fgets(usuario->nome, 90, stdin);
 
     printf("Digite seu cpf: ");
-    scanf("%d", &usuario->cpf);
+    fgets(usuario->cpf, 11, stdin);
+
+    while(getchar() != '\n' );
 
     printf("Digite seu numero da conta: ");
     scanf("%d", &usuario->numero_conta);
@@ -35,12 +37,14 @@ typedef struct {
     printf("Digite sua senha: ");
     fgets(usuario->senha, 50, stdin);
 
+
     }
 
 int main () {
 
     Conta usuario; 
     int opcao;
+    int conta_criada = 0;
 
     do {
 
@@ -59,11 +63,18 @@ int main () {
 
         criar_conta(&usuario);
 
+        conta_criada = 1;
+
         break;
 
         case 2: 
 
-        mostrar_conta(usuario);
+        if(conta_criada) {
+            mostrar_conta(usuario);
+        }else {
+            printf("Nenhuma conta cadastrada!\n");
+        }
+
 
         break;
 
